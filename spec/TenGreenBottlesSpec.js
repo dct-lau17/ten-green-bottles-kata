@@ -17,4 +17,11 @@ describe('tenGreenBottles', function(){
                                        'And if one green bottle should accidentally fall,\n'+
                                        `There’ll be one green bottle sitting on the wall.`)
   })
+
+  it('returns last verse lyrics', function(){
+    expect(song.lastVerse(1)).toEqual('One green bottle sitting on the wall,\n'+
+                                       'One green bottle sitting on the wall,\n'+
+                                       'And if one green bottle should accidentally fall,\n'+
+                                       `There’ll be zero green bottles sitting on the wall.`)
+  })
 })
