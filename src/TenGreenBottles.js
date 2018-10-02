@@ -11,7 +11,11 @@
     return [_firstSecondLine(num), _thirdLine(), _lastLine(num)].join('\n');
   }
 
-  TenGreenBottles.prototype.verseTwoFromLastOnwardsLyrics =  function(num){
+  TenGreenBottles.prototype.verseTwoFromLastLyrics =  function(num){
+    if(num != 2) {
+      throw new Error('This needs to be second to last verse');
+    }
+
     return [_firstSecondLine(num), _thirdLine(), _lastLine(num)].join('\n');
   }
 
