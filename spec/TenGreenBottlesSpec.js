@@ -1,7 +1,14 @@
 describe('tenGreenBottles', function(){
   var song, verse1, verse2, verse3
+
   beforeEach(function (){
     song = new TenGreenBottles(3)
+  })
+
+  describe('#initialize', function(){
+    it('throws error when input is a negative number', function(){
+      expect(function() {new TenGreenBottles(-1)}).toThrowError('number needs to be greater than 0');
+    })
   })
 
   describe('#verseLyrics', function(){

@@ -1,5 +1,8 @@
 (function(exports){
   function TenGreenBottles(num){
+    if(num < 0) {
+        throw new Error('number needs to be greater than 0');
+      }
     this.num = num
   }
 
@@ -13,7 +16,6 @@
   }
 
   TenGreenBottles.prototype.verseLyrics =  function(num){
-
     return [_firstSecondLine(num), _thirdLine(), _lastLine(num)].join('\n');
   }
 
