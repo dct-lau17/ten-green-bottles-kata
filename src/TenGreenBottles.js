@@ -4,6 +4,10 @@
   }
 
   TenGreenBottles.prototype.verseThreeFromLastOnwardsLyrics =  function(num){
+    if(num < 3) {
+      throw new Error('verse needs to be third from last');
+    }
+
     return [_firstSecondLine(num), _thirdLine(), _lastLine(num)].join('\n');
   }
 
