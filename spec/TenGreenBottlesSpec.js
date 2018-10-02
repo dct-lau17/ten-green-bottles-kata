@@ -27,16 +27,24 @@ describe('tenGreenBottles', function(){
                                          `There’ll be one green bottle sitting on the wall.`)
     })
 
-    it('throws error when a number less than 3 is passed in', function(){
+    it('throws error when a number that is not 2 is passed in', function(){
       expect(function() { song.verseTwoFromLastLyrics(1); })
                                 .toThrowError('This needs to be second to last verse');
     });
   });
 
-  it('returns last verse lyrics', function(){
-    expect(song.lastVerse(1)).toEqual('One green bottle sitting on the wall,\n'+
-                                       'One green bottle sitting on the wall,\n'+
-                                       'And if one green bottle should accidentally fall,\n'+
-                                       `There’ll be zero green bottles sitting on the wall.`)
+  describe('#lastVerse', function(){
+    it('returns last verse lyrics', function(){
+      expect(song.lastVerse(1)).toEqual('One green bottle sitting on the wall,\n'+
+                                         'One green bottle sitting on the wall,\n'+
+                                         'And if one green bottle should accidentally fall,\n'+
+                                         `There’ll be zero green bottles sitting on the wall.`)
+    })
+
+    it('throws error when a number less than 3 is passed in', function(){
+      expect(function() { song.lastVerse(2); })
+                                .toThrowError('This is not the last verse');
+    });
   })
+
 })
